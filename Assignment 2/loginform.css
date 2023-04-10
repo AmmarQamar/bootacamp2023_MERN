@@ -1,0 +1,83 @@
+body {
+    background-image: url(img/bg6.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    font-family: monospace;
+    color: white;
+}
+
+.loginform {
+    height: 70vh;
+    width: 30vw;
+    background: transparent;
+    background-color: #092a2854;
+    border: 2px solid blue;
+    border-radius: 15px;
+}
+
+.profile_img {
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -70px;
+}
+
+.profile_img>img {
+    width: 120px;
+    margin-top: 5px;
+    border-radius: 50%;
+}
+
+.fields>label {
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: aqua;
+}
+
+.loginform input {
+    width: 100%;
+    padding: 10px;
+    background: #e9ecef40;
+    color: white !important;
+}
+
+.loginform input::placeholder {
+    color: aqua;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+input:focus-within {
+    background: #e9ecef40 !important;
+    color: aqua !important;
+}
+
+/* .fields */
+.fields>.btn-login {
+    width: 100%;
+    padding: 10px;
+    border: solid 1px;
+    color: aqua;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.fields>.btn-login:hover {
+    background-color: rgb(51, 175, 175);
+    transition: ease all 2s;
+    border: 1px solid rgb(10, 82, 25);
+    color: white;
+}
+
+.forget {
+    text-align: center;
+}
+
+.fields>a {
+    text-decoration: none;
+    color: aqua;
+}
