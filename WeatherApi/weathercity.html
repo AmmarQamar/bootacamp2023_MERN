@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <!-- <select name="countryList" id="countryList">
+                <option value="" selected="selected">Select Any Country</option> -->
+            <label for="Country Name"> Country Name : </label>
+            <select name="country" id="countryList" onchange="checkcountry()">
+                <option value="" selected>-- Select Country --</option> -->
+                <option value="Pakistan">Pakistan</option>
+                <option value="India">India</option>
+                <option value="America">America</option>
+                <option value="Canada">Canada</option>
+                <option value="Australia">Australia</option>
+            </select>
+        </div>
+        <select name="" id="selectcity">-- Select City --
+            <option value="" selected="selected">-- Select Country --</option> 
+        </select>
+        <div>
+        </div>
+</body>
+<script>
+    // let city = [
+    //     { "Pakistan": ["Islamabad", "Lahore", "Karachi", "Peshawar"] },
+    //     { "India": ["Delhi", "Mumbai", "Kolkata", "Patna"] },
+    //     { "America": ["Austin", "Seattle", "Boston", "San Francisco"] },
+    //     { "Australia": ["Queensland ", "Brisbane", "Adelaide", "Tasmania "] },
+    //     { "Canada": ["Edmonton", "Alberta ", "Victoria", "Fredericton"] },
+    // ];
+    let city = {
+         Pakistan: 
+         ["Islamabad", "Lahore", "Karachi", "Peshawar"] ,
+         India: 
+         ["Delhi", "Mumbai", "Kolkata", "Patna"] ,
+         America: 
+         ["Austin", "Seattle", "Boston", "San Francisco"] ,
+         Australia: 
+         ["Queensland ", "Brisbane", "Adelaide", "Tasmania "] ,
+         Canada: 
+         ["Edmonton", "Alberta ", "Victoria", "Fredericton"] ,
+    };
+    // console.log(Object.keys(city)); // Pakistan India America
+    // console.log(Object.values(city));// Islamabad...Delhi...
+    function checkcountry() {
+        let country = document.getElementById('countryList');
+        // var text = country.options[country.selectedIndex].text;
+        
+        let cityList = document.getElementById("cityList");
+        let selectedCountry=country.value;
+        let ct=Object.keys(city);
+
+     
+
+
+        
+        
+        for(let x=0;x<ct.length;x++)
+        {
+            if(selectedCountry==ct[x])
+            {
+        
+                // console.log(city[selectedCountry])
+                city[selectedCountry].forEach(element => {
+                    console.log(element)
+                });
+                break;
+               
+                         
+        }
+    }
+
+        
+        // let list=Object.values(selectedCountry);
+        // debugger
+    // for(let cityList in city) {
+    //                     countryList.options[cityList.options] = new Option(city, city);
+    //                 }
+                }
+    // let city = {
+    //     "Pakistan": {
+    //        "Karachi": ["Islamabad","Lahore","Karachi","Peshawar"]},
+    //         "USA": {
+    // 	"California": {
+    // 		"Los Angeles": ["90001", "90002", "90003", "90004"],
+    // 		"San Diego": ["92093", "92101"]
+    // 	}
+    //     }};
+    // };
+ 
+    // var countryList = document.getElementById("countryList");
+    // for(let country in city) {
+    //                     countryList.options[countryList.options.length] = new Option(country, country);
+    //                 }
+
+   
+</script>
+
+</html>

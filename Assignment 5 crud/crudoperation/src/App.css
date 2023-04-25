@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  /* align-items: center; */
+  /* height: 90vh; */
+  width: 100vw;
+  border: 1px black solid;
+
+}
+
+.edit {
+  background-color: green;
+  width: 60px;
+}
+
+.del {
+  background-color: red;
+  /* display: inline !important; */
+  width: 60px;
+}
+
+table {
+  border: 1px solid black;
+  border-spacing: 0px;
+}
+
+table td {
+  width: 220px;
+  border: 1px solid black;
+}
+
+.addUser {
+  margin-top: 30px;
+  /* display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+
+.addUser > input ,select,button {
+  border: black solid 1px;
+
+  display: block;
+  width: 200px;
+  padding: 5px;
+  margin: 5px;
+}
+.showUsers{
+/* display: inline !important; */
+text-align: center;
+margin-top:30px;
+}

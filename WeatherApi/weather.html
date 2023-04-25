@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <select name="country" id="country" onchange="checkCountry()">
+                <option value="">Select Any Country</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="India">India</option>
+                <option value="London">London</option>
+                <option value="Canada">Canada</option>
+                <option value="Australia">Australia</option>
+            </select>
+<!-- For Pakistani Cities -->
+            <select name="city" id="Pakistan" style="visibility: hidden;">
+                <option value="">Select Any City</option>
+                <option value="Islamabad">Islamabad</option>
+                <option value="Rawalpindi">Rawalpindi</option>
+                <option value="Lahore">Lahore</option>
+                <option value="Karachi">Karachi</option>
+                <option value="Peshawar">Peshawar</option>
+            </select>
+
+<!-- For Indian Cities -->
+
+            <select name="city" id="India" style="visibility: hidden;">
+                <option value="">Select Any City</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Bombay">Bombay</option>
+                <option value="Koltata">Koltata</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chandigarh">Chandigarh</option>
+            </select>
+        </div>
+    </div>
+</body>
+<script>
+    function checkCountry() {
+        let country = document.getElementById('country');
+        var value = country.value;
+        var text = country.options[country.selectedIndex].text;
+        if (country.value == "Pakistan") {
+            let city = document.getElementById('Pakistan').style.visibility = "visible";
+        }
+        else if (country.value == "India") {
+            let city = document.getElementById('India').style.visibility = "visible";
+        }
+        else{
+            console.log("Select Any COuntry ")
+        }
+
+    }
+</script>
+
+</html>
