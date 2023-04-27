@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import App from './App.css';
-
 function Crud() {
+
   return (
     <div className="container">
       <AddList />
     </div>
+
   )
 }
 
@@ -27,7 +28,7 @@ function AddList() {
   const [updateIndex, setUpdateIndex] = useState("");
   const [searchUser, setSearchIndex] = useState("");
 
-  // Create Item
+// Create Item
   const addItems = () => {
     if (!(inputUser) || !(inputAddress) || !(inputCity)) { }
     else {
@@ -37,12 +38,13 @@ function AddList() {
       setInputCity('');
     }
   }
-
   // update Item
   const update = () => {
     updateIndex[0] = inputUser
     updateIndex[1] = inputAddress
     updateIndex[2] = inputCity
+    console.log(lists)
+    console.log(updateIndex)
     setLists([...lists])
   }
 
@@ -55,34 +57,36 @@ function AddList() {
     setEditClick(false)
     setUpdateIndex(editList);
   }
-
   const deleteItem = (id) => {
+    // const updatedList = lists.filter((elem, ind) => {
+    //     return ind !== id;
+    // });
+    // setLists(updatedList);
+    // Above OR Below
     let delItem = lists[id];
     let itemIndex = lists.indexOf(delItem);
     lists.splice(itemIndex, 1);
     setLists([...lists]);
   }
+const search =(e)=>{
 
-  const search = (e) => {
-    // debugger
-    setSearchIndex(e.target.value.toLowerCase());
-  }
+  //  setSearchIndex(e.target.value);
+   let query=e.target.value;
+   const searchFilter=lists.filter((lists)=>{
+    lists.inputUser.toLowerCase().includes(query.toLowerCase())
+    debugger
+   })
 
-  const filteredLists = lists.filter((list) => {
-    // debugger
-    return list[0].toLowerCase().includes(searchUser);
-  });
-
-
+}
   useEffect(() => {
     localStorage.setItem('lists', JSON.stringify(lists));
   }, [lists]);
 
   return (
     <div>
-      <div className="addUser">
+      <div class="addUser">
         <div>
-          <input type="search" onChange={search} />
+          <input type="search"  onChange={search}></input>
         </div>
         <input type="text" name="name" placeholder='Enter Your name' required value={inputUser}
           onChange={(e) => { setInputUser(e.target.value) }}></input>
@@ -106,6 +110,7 @@ function AddList() {
 
       <div className='showUsers'>
         {
+
           <div>
             <table>
               {
@@ -123,36 +128,21 @@ function AddList() {
                   </div>
                 ))
               }
+
             </table>
           </div>
+
         }
-      </div>
-      <div className='showSearches'>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Address</th>
-              <th>City</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredLists.map((elem, ind) => (
-              <tr key={ind}>
-                <td>{elem[0]}</td>
-                <td>{elem[1]}</td>
-                <td>{elem[2]}</td>
-                <td>
-                  <button className='edit' onClick={() => edit(ind, elem)}>Edit</button>
-                  <button className='del' onClick={() => deleteItem(ind)}>Delete</button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+
       </div>
 
+      {/* <div>
+      <ul>
+        {filteredItems.map(lists => (
+          <li key={lists.id}>{lists.name}</li>
+        ))}
+      </ul>
+      </div> */}
     </div>
   )
 }
