@@ -1,0 +1,16 @@
+[{
+    "id":1,
+    "title":"Mobile",
+    "price":5000
+},
+{
+    "id":2,
+    "title":"LCD",
+    "price":3000
+},
+{
+    "id":3,
+    "title":"ELectronics",
+    "price":10000
+}
+]
