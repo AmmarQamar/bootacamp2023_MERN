@@ -29,6 +29,7 @@ const handleChange=(e)=>{
         </form>
         <div>
             <h2> Your Name is {UserFormData.userName}</h2>
+            <h2> Your Email is {UserFormData.email}</h2>
         </div>
         </>
     );
