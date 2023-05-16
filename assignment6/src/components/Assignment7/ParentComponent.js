@@ -3,7 +3,7 @@ import AdditionComponent from './AddtitionComponent';
 import SubtractionComponent from './SubtractionComponent';
 import DivisionComponent from './DivisionComponent';
 
-const ResultComponent = () => {
+const ParentComponent = () => {
     const [additionResult, setAdditionResult] = useState(null);
     const [subtractionResult, setSubtractionResult] = useState(null);
     const [divisionResult, setDivisionResult] = useState(null);
@@ -22,4 +22,4 @@ const ResultComponent = () => {
     );
 };
 
-export default ResultComponent;
+export default ParentComponent;
